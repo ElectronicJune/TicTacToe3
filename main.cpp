@@ -9,7 +9,7 @@ using namespace std;
 
 //display board
 void display(string board){
-  for (int i=0;i<9;i++){
+  for (int i=0;i<9;++i){
     cout << " " << board[i] << " ";
     if (i%3 == 2){
       cout << "\n";
@@ -23,7 +23,7 @@ void display(string board){
 //return a vector of boards after the next move
 vector<string> moveCombinations(string board, char player){
   vector<string> combinations;
-  for (int i=0;i<9;i++){
+  for (int i=0;i<9;++i){
     if (board[i] == ' '){
       string combination = board;
       combination[i] = player;
@@ -46,7 +46,7 @@ int result(string board){
     }
   }
   //check for vertical match
-  for (int i=0;i<9;i++){
+  for (int i=0;i<9;++i){
     //check if there is no pieces on the position
     if (board[i]==' ') continue;
     //check if the whole column is the same
@@ -127,7 +127,7 @@ int main(){
     }else {
       cout << "YOU WON";
     }
-    cout << endl;
+    cout << "\n";
     first_player = first_player=='X' ? 'O' : 'X';
   }
   return 0;
